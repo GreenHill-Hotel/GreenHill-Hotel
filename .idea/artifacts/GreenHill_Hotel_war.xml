@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="GreenHill-Hotel:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>GreenHill-Hotel</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="GreenHill-Hotel-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="GreenHill-Hotel:war exploded" />
+    </root>
+  </artifact>
+</component>

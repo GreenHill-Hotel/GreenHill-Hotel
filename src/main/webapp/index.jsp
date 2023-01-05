@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- style css -->
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checked.css">
     <!-- Responsive-->
     <link rel="stylesheet" href="css/responsive.css">
     <!-- favicon -->
@@ -101,11 +102,19 @@
                             <label class="date">WYMELDOWANIE</label>
                             <input class="book_n"  type="date" >
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
                             <label class="date">LICZBA OSÓB</label>
                             <input class="book_n" placeholder="2" type="type" name="2">
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-2">
+                            <label class="date">Z BALKONEM?</label>
+                            <div class="toggle-pill-color" id="with-balcony-check">
+                                <input type="checkbox" id="pill3" name="check">
+                                <label for="pill3"></label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-2">
                             <button class="book_btn">Szukaj</button>
                         </div>
                     </div>

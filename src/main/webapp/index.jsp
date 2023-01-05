@@ -61,7 +61,7 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <div class="sign_btn"><a href="#">Logowanie</a></div>
+                            <div class="sign_btn"><a href="/login.jsp">Logowanie</a></div>
                         </div>
                     </nav>
                 </div>

@@ -27,7 +27,7 @@ public class SearchServlet extends HttpServlet {
             Date accommodationDate = dateFormat.parse(accommodation);
             Date checkoutDate = dateFormat.parse(checkout);
 
-            if (today.compareTo(accommodationDate) < 0 || accommodationDate.compareTo(checkoutDate) <= 0) {
+            if (today.compareTo(accommodationDate) < 0 || checkoutDate.compareTo(accommodationDate) <= 0) {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Wrong date entered!');");
                 out.println("location='index.jsp';");

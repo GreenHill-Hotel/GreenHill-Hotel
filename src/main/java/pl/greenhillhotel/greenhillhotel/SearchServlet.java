@@ -17,7 +17,7 @@ public class SearchServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String accommodation = request.getParameter("accommodation");
         String checkout = request.getParameter("checkout");
-        Integer people = Integer.parseInt(request.getParameter("people"));
+        int people = Integer.parseInt(request.getParameter("people"));
         boolean is_checked = request.getParameter("balcony") != null;
         PrintWriter out = response.getWriter();
 

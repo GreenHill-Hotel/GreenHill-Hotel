@@ -9,27 +9,32 @@
 <html>
 <head>
     <title>Logowanie</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checked.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/register-login.css">
 </head>
 <body>
-<div align="center">
+<div class="main">
     <h1>Logowanie</h1>
 
-<form action="LoginServlet" method="post">
-<table>
-    <tr>
-        <td>E-mail:</td>
-        <td><input type="email" name="txtName" placeholder="jan.kowalski@domain.com"></td>
-    </tr>
-    <tr>
-        <td>Hasło:</td>
-        <td><input type="password" name="txtPwd" placeholder="Hasło"></td>
-    </tr>
-    <tr>
-        <td><input type="submit" value="Zaloguj"></td>
-        <td><a href="register.jsp"><input type="button" value="Rejestracja" ></a></td>
-    </tr>
-</table>
-</form>
+    <form action="LoginServlet" method="post">
+        <section>
+            <label for="mail">E-mail:</label>
+            <input type="email" class="book_n" id="mail" name="mail" placeholder="jan.kowalski@domain.com">
+        </section>
+
+        <section>
+            <label for="password">Hasło:</label>
+            <input type="password" class="book_n" id="password" name="password" placeholder="Hasło">
+        </section>
+
+        <section class="button-wrapper">
+            <button class="book_btn right" type="submit">Zaloguj się</button>
+            <a href="register.jsp"><button class="book_btn" type="button">Rejestracja</button></a>
+        </section>
+    </form>
 </div>
 </body>
 </html>

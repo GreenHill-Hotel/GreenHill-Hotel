@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html lang="pl">
 <head>
+
     <!-- basic -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,6 +33,30 @@
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+    <script>
+        function validate()
+        {
+            let accommodation = document.getElementById('accommodation').value;
+            let checkout = document.getElementById('checkout').value;
+            let people = document.getElementById('people').value;
+
+            if (accommodation==null || accommodation==="")
+            {
+                alert("Enter accommodation date");
+                return false;
+            }
+            else if (checkout==null || checkout==="")
+            {
+                alert("Enter checkout date");
+                return false;
+            }
+            else if (people==null || people==="")
+            {
+                alert("Enter the number of people");
+                return false;
+            }
+        }
+    </script>
 </head>
 <!-- body -->
 <body class="main-layout">
@@ -92,24 +117,24 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <form class="form_book">
+                <form class="form_book" action="SearchServlet" method="post" onsubmit="return validate()">
                     <div class="row">
                         <div class="col-md-3">
                             <label class="date">ZAMELDOWANIE</label>
-                            <input class="book_n"  type="date" >
+                            <input class="book_n"  type="date" id="accommodation" name="accommodation">
                         </div>
                         <div class="col-md-3">
                             <label class="date">WYMELDOWANIE</label>
-                            <input class="book_n"  type="date" >
+                            <input class="book_n"  type="date" id="checkout" name="checkout">
                         </div>
                         <div class="col-md-2">
                             <label class="date">LICZBA OSÓB</label>
-                            <input class="book_n" placeholder="2" type="type" name="2">
+                            <input class="book_n" placeholder="2" type="type" id="people" name="people">
                         </div>
                         <div class="col-md-2">
                             <label class="date">Z BALKONEM?</label>
                             <div class="toggle-pill-color" id="with-balcony-check">
-                                <input type="checkbox" id="pill3" name="check">
+                                <input type="checkbox" id="pill3" name="balcony" value="balcony">
                                 <label for="pill3"></label>
                             </div>
                         </div>

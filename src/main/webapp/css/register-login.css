@@ -53,6 +53,16 @@ form input {
     border-radius: 28px !important;
 }
 
+.book_btn[disabled] {
+    opacity: 0.5;
+
+    /*pointer-events: none;*/
+    cursor: not-allowed;
+}
+.book_btn[disabled]:hover {
+    background: #000000;
+}
+
 .button-wrapper {
     width: 100%;
 
@@ -66,4 +76,11 @@ form input {
 .button-wrapper a {
     display: flex;
     justify-content: right;
+}
+
+.captcha {
+    display: flex;
+    justify-content: center;
+
+    padding: 1em 0;
 }

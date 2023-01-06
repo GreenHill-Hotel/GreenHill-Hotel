@@ -15,6 +15,14 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/register-login.css">
 
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+    <script defer>
+        var onRecaptchaSuccess = function() {
+            document.querySelector('#if-captcha').disabled = false
+        }
+    </script>
+
     <script>
         function validate()
         {
@@ -84,8 +92,19 @@
             <input type="password" class="book_n" id="password2" name="password2" placeholder="Hasło">
         </section>
 
+        <section class="captcha">
+            <div
+                    class="g-recaptcha"
+                    data-sitekey="6Lffq9UjAAAAAByKOAuSqL8JzgepMUwnNkjBO_vq"
+                    data-callback="onRecaptchaSuccess"
+            <%--                    data-expired-callback="onRecaptchaResponseExpiry"--%>
+            <%--                    data-error-callback="onRecaptchaError"--%>
+            >
+            </div>
+        </section>
+
         <section class="button-wrapper">
-            <button class="book_btn" type="submit">Zarejestruj</button>
+            <button class="book_btn" type="submit" id="if-captcha" disabled>Zarejestruj</button>
             <a href="login.jsp"><button class="book_btn" type="button">Logowanie</button></a>
         </section>
     </form>

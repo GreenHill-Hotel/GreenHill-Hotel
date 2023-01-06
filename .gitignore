@@ -2,3 +2,5 @@
 /target/
 /src/main/java/pl/greenhillhotel/greenhillhotel/RegisterDao.java
 /src/main/java/pl/greenhillhotel/greenhillhotel/RoomCreator.java
+/src/main/java/pl/greenhillhotel/greenhillhotel/SearchDao.java
+/src/main/java/pl/greenhillhotel/greenhillhotel/Connector.java

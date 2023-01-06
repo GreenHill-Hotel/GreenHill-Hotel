@@ -20,6 +20,7 @@ public class SearchServlet extends HttpServlet {
         int people = Integer.parseInt(request.getParameter("people"));
         boolean is_checked = request.getParameter("balcony") != null;
         PrintWriter out = response.getWriter();
+        boolean success = true;
 
         SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
         try {
@@ -32,6 +33,7 @@ public class SearchServlet extends HttpServlet {
                 out.println("alert('Wrong date entered!');");
                 out.println("location='index.jsp';");
                 out.println("</script>");
+                success = false;
             }
 
         } catch (ParseException e) {
@@ -42,6 +44,20 @@ public class SearchServlet extends HttpServlet {
             out.println("alert('Wrong people count!');");
             out.println("location='index.jsp';");
             out.println("</script>");
+            success = false;
+        }
+
+        if (success) {
+            SearchBean room = new SearchBean(accommodation, checkout, people, is_checked);
+            SearchDao searchDao = new SearchDao();
+            int roomNumber = searchDao.getRoom(room);
+
+            if (roomNumber == 0) {
+                // Nie ma wolnych pokoi
+            }
+            else {
+                // Jest wolny co najmniej jeden pokój
+            }
         }
     }
 }

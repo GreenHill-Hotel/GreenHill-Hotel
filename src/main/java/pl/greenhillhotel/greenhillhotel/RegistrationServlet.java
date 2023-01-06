@@ -4,6 +4,7 @@ import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 @WebServlet(name = "RegistrationServlet", value = "/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
@@ -13,17 +14,23 @@ public class RegistrationServlet extends HttpServlet {
         String last_name = request.getParameter("last_name");
         String email = request.getParameter("mail");
         String password = request.getParameter("password");
+        PrintWriter out = response.getWriter();
 
         RegisterBean member = new RegisterBean(name, last_name, email, password);
 
         RegisterDao registerDao = new RegisterDao();
         String result = registerDao.insert(member);
         if (result.equals("SUCCESS")) {
-            request.getRequestDispatcher("/index.jsp").forward(request, response);
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Successfully registered!');");
+            out.println("location='index.jsp';");
+            out.println("</script>");
         }
         else {
-            request.setAttribute("errMessage", result);
-            request.getRequestDispatcher("/register.jsp").forward(request, response);
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Failed to register you!');");
+            out.println("location='register.jsp';");
+            out.println("</script>");
         }
     }
 }

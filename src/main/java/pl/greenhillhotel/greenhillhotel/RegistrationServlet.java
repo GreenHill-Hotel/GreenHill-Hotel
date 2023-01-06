@@ -26,6 +26,12 @@ public class RegistrationServlet extends HttpServlet {
             out.println("location='index.jsp';");
             out.println("</script>");
         }
+        else if (result.equals("Account with such email already exists.")) {
+            out.println("<script type=\"text/javascript\">");
+            out.println("alert('Account with such email already exists.');");
+            out.println("location='register.jsp';");
+            out.println("</script>");
+        }
         else {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('Failed to register you!');");

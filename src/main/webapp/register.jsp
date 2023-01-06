@@ -9,6 +9,12 @@
 <html>
 <head>
     <title>Rejestracja</title>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/checked.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/register-login.css">
+
     <script>
         function validate()
         {
@@ -46,25 +52,42 @@
             }
         }
         </script>
-        </head>
+</head>
 <body>
-<div align="center">
+<div class="main">
     <h1>Rejestracja</h1>
 
     <form action="RegistrationServlet" method="post" onsubmit="return validate()">
-        <table>
-            <tr><td>Imię:</td><td><input type="text" id="first_name" name="first_name" placeholder="Jan"></td></tr>
-            <tr><td>Nazwisko:</td><td><input type="text" id="last_name" name="last_name" placeholder="Kowalski"></td></tr>
-            <tr><td>E-mail:</td><td><input type="email" id="mail" name="mail" placeholder="jan.kowalski@domain.com"></td></tr>
-            <tr><td>Hasło:</td><td><input type="password" id="password" name="password" placeholder="Hasło"></td></tr>
-            <tr><td>Powtórz hasło:</td><td><input type="password" id="password2" name="password2" placeholder="Hasło"></td></tr>
-            <tr>
-                <td><%=(request.getAttribute("errMessage") == null) ? ""
-                        : request.getAttribute("errMessage")%></td>
-            </tr>
-                <tr><td><input type="submit" value="Zarejestruj"></td>
-                <td><a href="login.jsp"><input type="button" value="Logowanie" ></a></td></tr>
-        </table>
+
+        <section>
+            <label for="first_name">Imię:</label>
+            <input type="text" class="book_n" id="first_name" name="first_name" placeholder="Jan">
+        </section>
+
+        <section>
+            <label for="last_name">Nazwisko:</label>
+            <input type="text" class="book_n" id="last_name" name="last_name" placeholder="Kowalski">
+        </section>
+
+        <section>
+            <label for="mail">E-mail:</label>
+            <input type="email" class="book_n" id="mail" name="mail" placeholder="jan.kowalski@domain.com">
+        </section>
+
+        <section>
+            <label for="password">Utwórz hasło:</label>
+            <input type="password" class="book_n" id="password" name="password" placeholder="Hasło">
+        </section>
+
+        <section>
+            <label for="password2">Powtórz hasło:</label>
+            <input type="password" class="book_n" id="password2" name="password2" placeholder="Hasło">
+        </section>
+
+        <section class="button-wrapper">
+            <button class="book_btn" type="submit">Zarejestruj</button>
+            <a href="login.jsp"><button class="book_btn" type="button">Logowanie</button></a>
+        </section>
     </form>
 </div>
 </body>

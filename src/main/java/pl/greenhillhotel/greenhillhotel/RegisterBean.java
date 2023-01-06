@@ -1,10 +1,10 @@
 package pl.greenhillhotel.greenhillhotel;
 
 public class RegisterBean {
-    String name;
-    String last_name;
-    String email;
-    String password;
+    private final String name;
+    private final String last_name;
+    private final String email;
+    private final String password;
 
     public RegisterBean(String name, String last_name, String email, String password) {
         this.name = name;

@@ -28,7 +28,7 @@ public class SearchServlet extends HttpServlet {
             Date accommodationDate = dateFormat.parse(accommodation);
             Date checkoutDate = dateFormat.parse(checkout);
 
-            if (today.compareTo(accommodationDate) < 0 || checkoutDate.compareTo(accommodationDate) <= 0) {
+            if (accommodationDate.compareTo(today) < 0 || checkoutDate.compareTo(accommodationDate) <= 0) {
                 out.println("<script type=\"text/javascript\">");
                 out.println("alert('Wrong date entered!');");
                 out.println("location='index.jsp';");
@@ -52,12 +52,9 @@ public class SearchServlet extends HttpServlet {
             SearchDao searchDao = new SearchDao();
             int roomNumber = searchDao.getRoom(room);
 
-            if (roomNumber == 0) {
-                // Nie ma wolnych pokoi
-            }
-            else {
-                // Jest wolny co najmniej jeden pokój
-            }
+            AvailableRoom availableRoom = new AvailableRoom(accommodation, checkout, people, is_checked, roomNumber);
+            request.setAttribute("availableRoom", availableRoom);
+            request.getRequestDispatcher("room.jsp").forward(request, response);
         }
     }
 }

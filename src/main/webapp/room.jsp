@@ -37,7 +37,7 @@
 
             <section class="box">
 
-                <form action="RegistrationServlet" method="post">
+                <form action="ReservationServlet" method="post">
 
                     <section class="info">
                         <h2 class="info-title">Informacje:</h2>
@@ -56,9 +56,19 @@
                             <label for="bed-set">Wybierz uklad lozek:</label>
 
                             <select name="bed-set" id="bed-set">
-                                <option value="11">1+1</option>
+
+                            <% if (availableRoom.getPeople() == 1) { %>
+                                <option value="1">1</option>
+                            <% } else if (availableRoom.getPeople() == 2) { %>
+                                <option value="1+1">1+1</option>
                                 <option value="2">2</option>
+                            <% } else { %>
+                                <option value="1+1+1">1+1+1</option>
+                                <option value="2+1">2+1</option>
+                            <% } %>
+
                             </select>
+
                         </section>
 
                         <section class="tv">

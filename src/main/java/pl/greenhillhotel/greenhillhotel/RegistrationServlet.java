@@ -38,5 +38,6 @@ public class RegistrationServlet extends HttpServlet {
             out.println("location='register.jsp';");
             out.println("</script>");
         }
+        out.close();
     }
 }

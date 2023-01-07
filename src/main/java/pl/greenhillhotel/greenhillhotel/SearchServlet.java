@@ -56,5 +56,6 @@ public class SearchServlet extends HttpServlet {
             request.setAttribute("availableRoom", availableRoom);
             request.getRequestDispatcher("room.jsp").forward(request, response);
         }
+        out.close();
     }
 }

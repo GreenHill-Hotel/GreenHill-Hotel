@@ -8,3 +8,4 @@
 
 .idea
 .idea/*
+/src/main/java/pl/greenhillhotel/greenhillhotel/LoginDao.java

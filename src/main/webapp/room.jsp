@@ -8,18 +8,18 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <%
-        AvailableRoom availableRoom = (AvailableRoom)request.getAttribute("availableRoom");
-        if (availableRoom.getId_room() == 0) {
-    %>
-    <title>Nie znaleziono wolnego pokoju, przepraszamy.</title>
-    <%
-        } else {
-    %>
-    <title>Konfiguracja pokoju</title>
-    <% } %>
+    <title>Rezerwacje</title>
 </head>
 <body>
-
+<%
+    AvailableRoom availableRoom = (AvailableRoom)request.getAttribute("availableRoom");
+    if (availableRoom.getId_room() == 0) {
+%>
+    <h1>Nie znaleziono wolnego pokoju, przepraszamy.</h1>
+<%
+} else {
+%>
+    <h1>Konfiguracja pokoju</h1>
+<% } %>
 </body>
 </html>

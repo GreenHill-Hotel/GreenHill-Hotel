@@ -75,7 +75,7 @@
                             <span>Telewizor w pokoju:</span>
 
                             <div class="toggle-pill-color" id="with-balcony-check">
-                                <input type="checkbox" id="pill3" name="balcony" value="balcony">
+                                <input type="checkbox" id="pill3" name="tv" value="tv">
                                 <label for="pill3"></label>
                             </div>
                         </section>

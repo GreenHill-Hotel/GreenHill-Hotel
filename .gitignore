@@ -5,3 +5,6 @@
 /src/main/java/pl/greenhillhotel/greenhillhotel/SearchDao.java
 /src/main/java/pl/greenhillhotel/greenhillhotel/Connector.java
 /src/main/java/pl/greenhillhotel/greenhillhotel/ReservationDao.java
+
+.idea
+.idea/*

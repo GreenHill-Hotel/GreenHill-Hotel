@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LoginBean userLoginData = new LoginBean(request.getParameter("mail"), request.getParameter("password"));
         UserBean userData = new LoginDao().login(userLoginData);
         PrintWriter out = response.getWriter();

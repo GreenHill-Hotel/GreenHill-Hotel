@@ -25,6 +25,7 @@ public class LoginDao {
                 user.setSurname(rs.getString("surname"));
                 user.setEmail(rs.getString("email"));
                 user.setAdmin(rs.getBoolean("admin"));
+                user.setValid(true);
             }
 
         } catch (SQLException e) {

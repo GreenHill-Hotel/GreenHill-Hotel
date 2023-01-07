@@ -1,11 +1,7 @@
 # Project exclude paths
 /target/
-/src/main/java/pl/greenhillhotel/greenhillhotel/RegisterDao.java
 /src/main/java/pl/greenhillhotel/greenhillhotel/RoomCreator.java
-/src/main/java/pl/greenhillhotel/greenhillhotel/SearchDao.java
-/src/main/java/pl/greenhillhotel/greenhillhotel/Connector.java
-/src/main/java/pl/greenhillhotel/greenhillhotel/ReservationDao.java
 
 .idea
 .idea/*
-/src/main/java/pl/greenhillhotel/greenhillhotel/LoginDao.java
+/src/main/java/pl/greenhillhotel/greenhillhotel/Connector.java

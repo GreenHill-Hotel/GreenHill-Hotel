@@ -42,11 +42,11 @@
                     <section class="info">
                         <h2 class="info-title">Informacje:</h2>
 
-                        <span class="room-id">Pokój numer: <span class="highlight">ID</span></span>
-                        <span class="accommodation">Data przyjazdu: <span class="highlight">01-02-2023</span></span>
-                        <span class="checkout">Data wymeldowania: <span class="highlight">01-04-2023</span></span>
-                        <span class="people">Liczba osób: <span class="highlight">2</span></span>
-                        <span class="balcony">Balkon: <span class="highlight">Nie</span></span>
+                        <span class="room-id">Pokój numer: <span class="highlight"><%=availableRoom.getId_room()%></span></span>
+                        <span class="accommodation">Data przyjazdu: <span class="highlight"><%=availableRoom.getAccommodation()%></span></span>
+                        <span class="checkout">Data wymeldowania: <span class="highlight"><%=availableRoom.getCheckout()%></span></span>
+                        <span class="people">Liczba osób: <span class="highlight"><%=availableRoom.getPeople()%></span></span>
+                        <span class="balcony">Balkon: <span class="highlight"><%=availableRoom.getBalconyText()%></span></span>
                     </section>
 
                     <section class="conf">

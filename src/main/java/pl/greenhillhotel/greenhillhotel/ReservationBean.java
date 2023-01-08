@@ -2,6 +2,8 @@ package pl.greenhillhotel.greenhillhotel;
 
 public class ReservationBean {
     private int id_reservation;
+    private String name;
+    private String surname;
     private final int id_room;
     private final int id_user;
     private final String bed_config;
@@ -46,7 +48,23 @@ public class ReservationBean {
         return checkout;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
+
     public void setId_reservation(int id_reservation) {
         this.id_reservation = id_reservation;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
     }
 }

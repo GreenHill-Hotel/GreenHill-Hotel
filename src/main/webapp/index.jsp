@@ -1,3 +1,4 @@
+<%@ page import="pl.greenhillhotel.greenhillhotel.UserBean" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 
 
@@ -85,8 +86,29 @@
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample04" aria-controls="navbarsExample04" aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
                         </button>
-                        <div class="collapse navbar-collapse" id="navbarsExample04">
-                            <div class="sign_btn"><a href="/login.jsp">Logowanie</a></div>
+                        <div class="collapse navbar-collapse" id="navbarsExample04" style="display:flex; flex-direction: row-reverse">
+
+                            <% UserBean currentUser = (UserBean) session.getAttribute("currentUser"); %>
+
+                            <% if (currentUser == null) { %>
+                                <div class="sign_btn"><a href="/login.jsp">Logowanie</a></div>
+                            <% } else { %>
+                                <form action="LogoutServlet" id="logout" method="post" class="sign_btn">
+                                    <a class="sign_btn" type="submit" onclick="document.getElementById('logout').submit()">Wyloguj</a>
+                                </form>
+
+                                <% if (currentUser.isAdmin()) { %>
+                                <form action="AdminReservationsServlet" id="admin" method="post" class="sign_btn">
+                                    <a class="sign_btn" type="submit" onclick="document.getElementById('admin').submit()">Admin</a>
+                                </form>
+
+                                <% } else { %>
+                                <form action="MyReservationsServlet" id="reservations" method="post" class="sign_btn">
+                                    <a class="sign_btn" type="submit" onclick="document.getElementById('reservations').submit()">Rezerwacje</a>
+                                </form>
+
+                                <% } %>
+                            <% } %>
                         </div>
                     </nav>
                 </div>

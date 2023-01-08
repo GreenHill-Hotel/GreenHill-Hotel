@@ -298,6 +298,7 @@ button {
 
 .sign_btn {
      padding-left: 50px;
+     cursor: pointer;
 }
 
 .sign_btn a {

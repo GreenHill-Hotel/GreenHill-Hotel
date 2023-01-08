@@ -40,9 +40,9 @@
                 <span>Pokój numer ${reservation.id_room}</span>
                 <span>${reservation.name} ${reservation.surname}</span>
                 <span>Układ łóżek: ${reservation.bed_config}</span>
-                <span>Telewizor: ${reservation.tv}</span>
-                <span>${reservation.accommodation}</span>
-                <span>${reservation.checkout}</span>
+                <span>Telewizor: ${reservation.tvText}</span>
+                <span>Od: ${reservation.accommodation}</span>
+                <span>Do: ${reservation.checkout}</span>
             </section>
 
             <form class="remove-reservation">

@@ -8,6 +8,7 @@ public class ReservationBean {
     private final int id_user;
     private final String bed_config;
     private final boolean tv;
+    private final String tvText;
     private final String accommodation;
     private final String checkout;
 
@@ -16,6 +17,10 @@ public class ReservationBean {
         this.id_user = id_user;
         this.bed_config = bed_config;
         this.tv = tv;
+        if (tv)
+            this.tvText = "Tak";
+        else
+            this.tvText = "Nie";
         this.accommodation = accommodation;
         this.checkout = checkout;
     }
@@ -54,6 +59,10 @@ public class ReservationBean {
 
     public String getSurname() {
         return surname;
+    }
+
+    public String getTvText() {
+        return tvText;
     }
 
     public void setId_reservation(int id_reservation) {

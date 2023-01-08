@@ -12,7 +12,7 @@ public class CancelReservationDao {
 
         try {
             PreparedStatement ps = connection.prepareStatement(sqlQuery);
-            ps.setString(1, Integer.toString(id));
+            ps.setInt(1, id);
             ps.executeUpdate();
         } catch (SQLException e) {
             e.printStackTrace();

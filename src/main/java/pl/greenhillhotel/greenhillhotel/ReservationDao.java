@@ -11,10 +11,10 @@ public class ReservationDao {
         String result = "SUCCESS";
         try {
             PreparedStatement ps = connection.prepareStatement(sqlQuery);
-            ps.setString(1, Integer.toString(reservationData.getId_room()));
-            ps.setString(2, Integer.toString(reservationData.getId_user()));
+            ps.setInt(1, reservationData.getId_room());
+            ps.setInt(2, reservationData.getId_user());
             ps.setString(3, reservationData.getBed_config());
-            ps.setString(4, Boolean.toString(reservationData.isTv()));
+            ps.setBoolean(4, reservationData.isTv());
             ps.setString(5, reservationData.getAccommodation());
             ps.setString(6, reservationData.getCheckout());
             ps.executeUpdate();

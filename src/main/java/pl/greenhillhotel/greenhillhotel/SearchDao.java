@@ -20,8 +20,8 @@ public class SearchDao {
 
         try {
             PreparedStatement psGetRoom = connection.prepareStatement(getRoomsQuery);
-            psGetRoom.setString(1, Integer.toString(roomInfo.getPeople()));
-            psGetRoom.setString(2, Boolean.toString(roomInfo.isBalcony()));
+            psGetRoom.setInt(1, roomInfo.getPeople());
+            psGetRoom.setBoolean(2, roomInfo.isBalcony());
             ResultSet rsRooms = psGetRoom.executeQuery();
 
             PreparedStatement psGetReservations = connection.prepareStatement(getReservedRoomsQuery);

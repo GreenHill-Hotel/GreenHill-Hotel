@@ -10,11 +10,14 @@
             <param-name>requestEncoding</param-name>
             <param-value>UTF-8</param-value>
         </init-param>
+
     </filter>
 
     <filter-mapping>
         <filter-name>CharsetFilter</filter-name>
         <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>ERROR</dispatcher>
     </filter-mapping>
     <jsp-config>
         <jsp-property-group>

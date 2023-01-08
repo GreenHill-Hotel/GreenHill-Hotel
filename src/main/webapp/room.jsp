@@ -53,7 +53,7 @@
                         <h2 class="conf-title">Konfiguracja:</h2>
 
                         <section class="beds">
-                            <label for="bed-set">Wybierz uklad lozek:</label>
+                            <label for="bed-set">Wybierz układ łóżek:</label>
 
                             <select name="bed-set" id="bed-set">
 

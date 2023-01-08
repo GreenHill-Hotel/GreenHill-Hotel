@@ -45,8 +45,8 @@
                 <span>Do: ${reservation.checkout}</span>
             </section>
 
-            <form class="remove-reservation">
-                <button type="submit">anuluj</button>
+            <form class="remove-reservation" method="post" action="CancelReservationServlet">
+                <button type="submit" name="cancel" value="${reservation.id_reservation}">Anuluj</button>
             </form>
 
         </section>

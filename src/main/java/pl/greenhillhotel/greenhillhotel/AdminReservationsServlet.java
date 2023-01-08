@@ -14,7 +14,7 @@ public class AdminReservationsServlet extends HttpServlet {
         List<ReservationBean> reservations = new AdminReservationsDao().getReservations();
         PrintWriter out = response.getWriter();
 
-        if (reservations == null) {
+        if (reservations == null || reservations.size() == 0) {
             out.println("<script type=\"text/javascript\">");
             out.println("alert('No reservations to show yet!');");
             out.println("location='index.jsp';");

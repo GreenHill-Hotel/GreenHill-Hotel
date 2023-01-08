@@ -1,3 +1,7 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="pl.greenhillhotel.greenhillhotel.ReservationBean" %>
+<%@ page import="java.util.List" %>
+
 <%--
   Created by IntelliJ IDEA.
   User: jjay31
@@ -5,7 +9,9 @@
   Time: 23:23
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+
 <html>
 <head>
     <title>Panel administracyjny</title>
@@ -18,21 +24,25 @@
 
 <body>
 
-    <main>
+<% List <ReservationBean> reservationList = (List <ReservationBean>) request.getAttribute("adminReservations"); %>
+
+<main>
+
+    <c:forEach items="${adminReservations}" var="reservation">
 
         <section class="card">
 
             <section class="reservation-id">
-                <span>1</span>
+                <span>${reservation.id_reservation}</span>
             </section>
 
             <section class="reservation-details">
-                <span>Pokój 15</span>
-                <span>Adam Nowak</span>
-                <span>1+1</span>
-                <span>Z telewizorem</span>
-                <span>01-01-2023</span>
-                <span>01-02-2023</span>
+                <span>Pokój numer ${reservation.id_room}</span>
+                <span>${reservation.name} ${reservation.surname}</span>
+                <span>Układ łóżek: ${reservation.bed_config}</span>
+                <span>Telewizor: ${reservation.tv}</span>
+                <span>${reservation.accommodation}</span>
+                <span>${reservation.checkout}</span>
             </section>
 
             <form class="remove-reservation">
@@ -40,50 +50,9 @@
             </form>
 
         </section>
+    </c:forEach>
 
-        <section class="card">
-
-            <section class="reservation-id">
-                <span>1</span>
-            </section>
-
-            <section class="reservation-details">
-                <span>Pokój 15</span>
-                <span>Adam Nowak</span>
-                <span>1+1</span>
-                <span>Z telewizorem</span>
-                <span>01-01-2023</span>
-                <span>01-02-2023</span>
-            </section>
-
-            <form class="remove-reservation">
-                <button type="submit">anuluj</button>
-            </form>
-
-        </section>
-
-        <section class="card">
-
-            <section class="reservation-id">
-                <span>1</span>
-            </section>
-
-            <section class="reservation-details">
-                <span>Pokój 15</span>
-                <span>Adam Nowak</span>
-                <span>1+1</span>
-                <span>Z telewizorem</span>
-                <span>01-01-2023</span>
-                <span>01-02-2023</span>
-            </section>
-
-            <form class="remove-reservation">
-                <button type="submit">anuluj</button>
-            </form>
-
-        </section>
-
-    </main>
+</main>
 
 </body>
 </html>

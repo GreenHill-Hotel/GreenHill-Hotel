@@ -19,7 +19,7 @@ public class AdminReservationsDao {
         List <ReservationBean> list = new ArrayList<>();
         try {
             ResultSet rs = connection.createStatement().executeQuery(sqlQuery);
-            if (!rs.next())
+            if (rs == null)
                 return null;
             else {
                 while (rs.next()) {
@@ -27,7 +27,7 @@ public class AdminReservationsDao {
                     int idReservation = rs.getInt("id_reservation");
                     int idRoom = rs.getInt("id_room");
                     int idUser = rs.getInt("id_user");
-                    ps.setString(1, Integer.toString(idUser));
+                    ps.setInt(1, idUser);
                     String bedConfig = rs.getString("bed_config");
                     boolean tv = rs.getBoolean("tv");
                     String accommodation = rs.getString("date_start");
@@ -47,6 +47,7 @@ public class AdminReservationsDao {
 
                     ReservationBean reservation = new ReservationBean(idRoom, idUser, bedConfig, tv, accommodation, checkout);
                     ResultSet rsUser = ps.executeQuery();
+                    rsUser.next();
                     reservation.setId_reservation(idReservation);
                     reservation.setName(rsUser.getString("name"));
                     reservation.setSurname(rsUser.getString("surname"));

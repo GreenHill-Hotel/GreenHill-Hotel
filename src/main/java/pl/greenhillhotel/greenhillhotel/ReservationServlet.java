@@ -10,10 +10,10 @@ import java.io.PrintWriter;
 public class ReservationServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        AvailableRoom availableRoom = (AvailableRoom) request.getAttribute("availableRoom");
+        HttpSession session = request.getSession();
+        AvailableRoom availableRoom = (AvailableRoom) session.getAttribute("availableRoom");
         String bedConfig = request.getParameter("bed-set");
         boolean tv = Boolean.parseBoolean(request.getParameter("tv"));
-        HttpSession session = request.getSession();
         UserBean user = (UserBean) session.getAttribute("currentUser");
         PrintWriter out = response.getWriter();
 

@@ -53,7 +53,8 @@ public class SearchServlet extends HttpServlet {
             int roomNumber = searchDao.getRoom(room);
 
             AvailableRoom availableRoom = new AvailableRoom(accommodation, checkout, people, is_checked, roomNumber);
-            request.setAttribute("availableRoom", availableRoom);
+            HttpSession session = request.getSession();
+            session.setAttribute("availableRoom", availableRoom);
             request.getRequestDispatcher("room.jsp").forward(request, response);
         }
         out.close();

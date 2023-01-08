@@ -18,7 +18,7 @@
 </head>
 <body>
     <%
-        AvailableRoom availableRoom = (AvailableRoom)request.getAttribute("availableRoom");
+        AvailableRoom availableRoom = (AvailableRoom)session.getAttribute("availableRoom");
         if (availableRoom.getId_room() == 0) {
     %>
 

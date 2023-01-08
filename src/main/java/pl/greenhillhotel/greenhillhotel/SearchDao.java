@@ -10,7 +10,7 @@ import java.util.List;
 public class SearchDao {
     public Integer getRoom(SearchBean roomInfo) {
         Connection connection = new Connector().getConnection();
-        String getRoomsQuery = "SELECT id_room from room WHERE capacity= ? AND balcony= ? ";
+        String getRoomsQuery = "SELECT id_room FROM room WHERE capacity= ? AND balcony= ? ";
         String getReservedRoomsQuery = "SELECT id_room FROM reservation WHERE DATE( ? ) < date_end AND DATE( ? ) > date_start ";
 
         List<Integer> roomList = new ArrayList<>();

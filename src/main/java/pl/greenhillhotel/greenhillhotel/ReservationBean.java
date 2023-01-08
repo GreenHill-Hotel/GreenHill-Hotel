@@ -4,6 +4,7 @@ public class ReservationBean {
     private int id_reservation;
     private String name;
     private String surname;
+    private boolean cancelable;
     private final int id_room;
     private final int id_user;
     private final String bed_config;
@@ -65,6 +66,10 @@ public class ReservationBean {
         return tvText;
     }
 
+    public boolean isCancelable() {
+        return cancelable;
+    }
+
     public void setId_reservation(int id_reservation) {
         this.id_reservation = id_reservation;
     }
@@ -75,5 +80,9 @@ public class ReservationBean {
 
     public void setSurname(String surname) {
         this.surname = surname;
+    }
+
+    public void setCancelable(boolean cancelable) {
+        this.cancelable = cancelable;
     }
 }

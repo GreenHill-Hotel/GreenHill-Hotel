@@ -11,9 +11,10 @@ public class LoginDao {
         Connection connection = new Connector().getConnection();
         String sqlQuery = "SELECT * FROM user WHERE email= ? AND password = ? ";
         try {
+            String encryptedPassword = new PasswordEncryptor().encrypt(data.getPassword());
             PreparedStatement ps = connection.prepareStatement(sqlQuery);
             ps.setString(1, data.getEmail());
-            ps.setString(2, data.getPassword());
+            ps.setString(2, encryptedPassword);
             ResultSet rs = ps.executeQuery();
 
             if (!rs.next())
@@ -29,6 +30,8 @@ public class LoginDao {
             }
 
         } catch (SQLException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return user;

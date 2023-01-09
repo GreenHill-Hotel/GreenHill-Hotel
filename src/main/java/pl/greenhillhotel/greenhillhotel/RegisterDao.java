@@ -16,17 +16,20 @@ public class RegisterDao {
                 result = "Account with such email already exists.";
             }
             else {
+                String encryptedPassword = new PasswordEncryptor().encrypt(member.getPassword());
                 sqlQuery = "insert into user (name, surname, email, password) values (?, ?, ?, ?)";
                 ps = connection.prepareStatement(sqlQuery);
                 ps.setString(1, member.getName());
                 ps.setString(2, member.getLast_name());
                 ps.setString(3, member.getEmail());
-                ps.setString(4, member.getPassword());
+                ps.setString(4, encryptedPassword);
                 ps.executeUpdate();
             }
         } catch (SQLException ex) {
             ex.printStackTrace();
             result = "Data not passed";
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         return result;
     }

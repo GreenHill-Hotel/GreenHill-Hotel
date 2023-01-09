@@ -1,7 +1,4 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page import="pl.greenhillhotel.greenhillhotel.ReservationBean" %>
-<%@ page import="java.util.List" %>
-
 <%--
   Created by IntelliJ IDEA.
   User: jjay31
@@ -23,8 +20,6 @@
 </head>
 
 <body>
-
-<% List <ReservationBean> reservationList = (List <ReservationBean>) request.getAttribute("adminReservations"); %>
 
 <main>
 

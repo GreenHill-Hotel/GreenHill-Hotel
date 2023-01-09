@@ -38,7 +38,7 @@
 
             <section class="reservation-details">
                 <span>Pokój numer ${reservation.id_room}</span>
-                <span>${reservation.name} ${reservation.surname}</span>
+                <span>${reservation.name} ${reservation.surname} (id: ${reservation.id_user})</span>
                 <span>Układ łóżek: ${reservation.bed_config}</span>
                 <span>Telewizor: ${reservation.tvText}</span>
                 <span>Od: ${reservation.accommodation}</span>

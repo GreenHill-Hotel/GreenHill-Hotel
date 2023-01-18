@@ -1,5 +1,10 @@
 package pl.greenhillhotel.greenhillhotel;
 
+/**
+ * Data essential to properly register new reservation in the database.
+ *
+ * @see ReservationDao
+ */
 public class ReservationBean {
     private int id_reservation;
     private String name;
@@ -13,6 +18,16 @@ public class ReservationBean {
     private final String accommodation;
     private final String checkout;
 
+    /**
+     * Class constructor.
+     *
+     * @param id_room id of the selected room.
+     * @param id_user id of the user.
+     * @param bed_config bed configuration picked by the user.
+     * @param tv whether the reserved room has tv.
+     * @param accommodation start date of the reservation.
+     * @param checkout end date of the reservation.
+     */
     public ReservationBean(int id_room, int id_user, String bed_config, boolean tv, String accommodation, String checkout) {
         this.id_room = id_room;
         this.id_user = id_user;

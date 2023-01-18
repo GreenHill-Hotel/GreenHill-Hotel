@@ -12,7 +12,20 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Handling sql queries related to my reservations page.
+ *
+ * @see ReservationBean
+ */
 public class MyReservationsDao {
+    /**
+     * Method to get all the reservations of the given user.
+     *
+     * @param idUser id of the user whose reservations should be returned.
+     * @return list of reservation objects.
+     *
+     * @see ReservationBean
+     */
     public List<ReservationBean> getReservations(int idUser) {
         Connection connection = new Connector().getConnection();
         String sqlQuery = "SELECT * FROM reservation WHERE id_user= ? ";

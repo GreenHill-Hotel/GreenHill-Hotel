@@ -4,7 +4,16 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Handling sql queries related to cancelling reservation.
+ */
 public class CancelReservationDao {
+    /**
+     * A method which cancels given reservation by its id.
+     *
+     * @param id index of the reservation you want to cancel.
+     * @return result of the operation.
+     */
     public String cancelReservation(int id) {
         String result = "SUCCESS";
         Connection connection = new Connector().getConnection();

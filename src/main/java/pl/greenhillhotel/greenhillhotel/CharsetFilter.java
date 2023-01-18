@@ -3,6 +3,9 @@ package pl.greenhillhotel.greenhillhotel;
 import javax.servlet.*;
 import java.io.IOException;
 
+/**
+ * Filter used to ensure that the application uses UTF-8 encoding.
+ */
 public class CharsetFilter implements Filter {
 
     private String encoding;

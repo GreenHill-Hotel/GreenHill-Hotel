@@ -7,7 +7,19 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Handling sql queries related to searching for the desired available room.
+ *
+ * @see SearchBean
+ */
 public class SearchDao {
+    /**
+     * Method to get the first available room which meets expectations.
+     *
+     * @param roomInfo object with all essential room data
+     * @return id of the proper room.
+     * @see SearchBean
+     */
     public Integer getRoom(SearchBean roomInfo) {
         Connection connection = new Connector().getConnection();
         String getRoomsQuery = "SELECT id_room FROM room WHERE capacity= ? AND balcony= ? ";

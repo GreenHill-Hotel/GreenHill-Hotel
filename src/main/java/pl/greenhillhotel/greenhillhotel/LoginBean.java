@@ -1,5 +1,8 @@
 package pl.greenhillhotel.greenhillhotel;
 
+/**
+ * Email and password data which is later passed to the proper Dao to create a session and login the user.
+ */
 public class LoginBean {
     private final String email;
     private final String password;

@@ -6,8 +6,20 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Servlet responsible for registering the new user.
+ *
+ * @see RegisterDao
+ * @see RegisterBean
+ */
 @WebServlet(name = "RegistrationServlet", value = "/RegistrationServlet")
 public class RegistrationServlet extends HttpServlet {
+    /**
+     * Registers the user if the data is correct, otherwise sends the proper alert.
+     *
+     * @see RegisterDao
+     * @see RegisterBean
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String name = request.getParameter("first_name");

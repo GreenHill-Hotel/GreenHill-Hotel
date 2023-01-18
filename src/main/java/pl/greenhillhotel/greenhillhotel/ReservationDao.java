@@ -4,7 +4,19 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+/**
+ * Handling sql queries related to registering new reservation.
+ *
+ * @see ReservationBean
+ */
 public class ReservationDao {
+    /**
+     * Method to register new reservation in database.
+     *
+     * @param reservationData data of the room and user to insert into database.
+     * @return result of the action.
+     * @see ReservationBean
+     */
     public String insert(ReservationBean reservationData) {
         Connection connection = new Connector().getConnection();
         String sqlQuery = "INSERT INTO reservation (id_room, id_user, bed_config, tv, date_start, date_end) VALUES (?, ?, ?, ?, ?, ?)";

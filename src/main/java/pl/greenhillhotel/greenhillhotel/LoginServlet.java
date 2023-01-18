@@ -6,8 +6,22 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Servlet responsible for logging in the user.
+ *
+ * @see LoginBean
+ * @see LoginDao
+ * @see UserBean
+ */
 @WebServlet(name = "LoginServlet", value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
+    /**
+     * Logs in the user if the data is correct, otherwise sends the proper alert.
+     *
+     * @see LoginBean
+     * @see LoginDao
+     * @see UserBean
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         LoginBean userLoginData = new LoginBean(request.getParameter("mail"), request.getParameter("password"));

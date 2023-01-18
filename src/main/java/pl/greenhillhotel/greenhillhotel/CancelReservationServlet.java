@@ -6,8 +6,17 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Servlet responsible for canceling reservations.
+ *
+ * @see CancelReservationDao
+ * @see UserBean
+ */
 @WebServlet(name = "CancelReservationServlet", value = "/CancelReservationServlet")
 public class CancelReservationServlet extends HttpServlet {
+    /**
+     * Cancels the reservation after pressing "Cancel" button.
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         int id = Integer.parseInt(request.getParameter("cancel"));

@@ -11,7 +11,17 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Handling sql queries related to admin reservations page.
+ */
 public class AdminReservationsDao {
+    /**
+     * Returns a list of ReservationBean objects that will be displayed at the admin page.
+     * This method checks if the reservation ended, so it won't add it to the list.
+     *
+     * @return list of current reservations
+     * @see ReservationBean
+     */
     public List<ReservationBean> getReservations() {
         Connection connection = new Connector().getConnection();
         String sqlQuery = "SELECT * FROM reservation";

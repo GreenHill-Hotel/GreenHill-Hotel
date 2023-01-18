@@ -2,8 +2,21 @@ package pl.greenhillhotel.greenhillhotel;
 
 import java.sql.*;
 
+/**
+ * Handling sql queries related to registering new user.
+ *
+ * @see RegisterBean
+ */
 public class RegisterDao {
 
+    /**
+     * Method to put new registered users' data into database.
+     *
+     * @param member user data to be put into database.
+     * @return result of the action.
+     *
+     * @see RegisterBean
+     */
     public String insert(RegisterBean member) {
         Connection connection = new Connector().getConnection();
         String sqlQuery = "select email from user where email= ? ";

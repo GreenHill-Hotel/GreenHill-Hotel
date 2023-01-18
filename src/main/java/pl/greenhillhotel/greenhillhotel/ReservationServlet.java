@@ -6,8 +6,20 @@ import javax.servlet.annotation.*;
 import java.io.IOException;
 import java.io.PrintWriter;
 
+/**
+ * Servlet responsible for registering the new reservation.
+ *
+ * @see ReservationDao
+ * @see ReservationBean
+ */
 @WebServlet(name = "ReservationServlet", value = "/ReservationServlet")
 public class ReservationServlet extends HttpServlet {
+    /**
+     * Registers the new reservation, displays the proper alert whether it was successful or not.
+     *
+     * @see ReservationDao
+     * @see ReservationBean
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

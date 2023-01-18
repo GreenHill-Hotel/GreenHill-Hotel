@@ -10,9 +10,21 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.util.Date;
 
+/**
+ * Servlet responsible for searching for the first desired available room.
+ *
+ * @see SearchBean
+ * @see SearchDao
+ */
 @WebServlet(name = "SearchServlet", value = "/SearchServlet")
 public class SearchServlet extends HttpServlet {
 
+    /**
+     * Search for the available room, display proper alert if user entered wrong data.
+     *
+     * @see SearchBean
+     * @see SearchDao
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String accommodation = request.getParameter("accommodation");

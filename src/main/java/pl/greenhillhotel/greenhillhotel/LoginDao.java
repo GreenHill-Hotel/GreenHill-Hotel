@@ -5,7 +5,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * Handling sql queries related to logging in the user.
+ *
+ * @see LoginBean
+ * @see UserBean
+ */
 public class LoginDao {
+    /**
+     * Method used to log in the user.
+     *
+     * @param data object containing email and password of the user.
+     * @return user object containing all the important information about it.
+     *
+     * @see LoginBean
+     * @see UserBean
+     */
     public UserBean login(LoginBean data) {
         UserBean user = new UserBean();
         Connection connection = new Connector().getConnection();

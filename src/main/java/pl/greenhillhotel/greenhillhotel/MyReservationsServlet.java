@@ -7,8 +7,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+/**
+ * Servlet responsible for preparing reservations data to show for the user.
+ */
 @WebServlet(name = "MyReservationsServlet", value = "/MyReservationsServlet")
 public class MyReservationsServlet extends HttpServlet {
+    /**
+     * Prepares the reservations data to be displayed.
+     *
+     * @see ReservationBean
+     * @see MyReservationsDao
+     */
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();

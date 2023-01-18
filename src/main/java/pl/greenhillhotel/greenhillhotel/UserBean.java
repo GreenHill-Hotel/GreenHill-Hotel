@@ -1,5 +1,15 @@
 package pl.greenhillhotel.greenhillhotel;
 
+/**
+ * Object of the user.
+ * It contains all the essential data which is passed between servlets when logged in.
+ *
+ * @see CancelReservationServlet
+ * @see ReservationServlet
+ * @see MyReservationsServlet
+ * @see LoginDao
+ * @see LoginServlet
+ */
 public class UserBean {
     private int id;
     private String name;

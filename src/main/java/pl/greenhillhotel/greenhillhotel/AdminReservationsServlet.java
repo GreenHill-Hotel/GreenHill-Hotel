@@ -7,8 +7,17 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
+/**
+ * Servlet responsible for preparing data to show for a page administrator.
+ */
 @WebServlet(name = "AdminReservationsServlet", value = "/AdminReservationsServlet")
 public class AdminReservationsServlet extends HttpServlet {
+    /**
+     * Prepares the reservations data to be displayed.
+     *
+     * @see AdminReservationsDao
+     * @see ReservationBean
+     **/
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<ReservationBean> reservations = new AdminReservationsDao().getReservations();
